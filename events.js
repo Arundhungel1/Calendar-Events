@@ -18,7 +18,14 @@ function getAvailableDayTime(already_booked, available) {
       if ((new Date(x.start).getTime() <= new Date(y.end).getTime() && new Date(x.start).getTime() >= new Date(y.start).getTime())
       || (new Date(x.end).getTime() <= new Date(y.end).getTime() && new Date(x.end).getTime() >= new Date(x.start).getTime())
       || x.getDay() === y.getDay()
-      )
-      })
-    })
+      ){
+        canBook.slice(j,i);
+       }
+
+      });
+    });
+    console.log(canBook)
+    return canBook;
 }
+
+console.log(getAvailableDayTime(already_booked,available))
