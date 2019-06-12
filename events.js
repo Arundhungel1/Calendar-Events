@@ -19,7 +19,7 @@ function getAvailableDayTime(already_booked, available) {
       || (new Date(x.end).getTime() <= new Date(y.end).getTime() && new Date(x.end).getTime() >= new Date(x.start).getTime())
       || x.getDay() === y.getDay()
       ){
-        canBook.slice(j,i);
+        canBook.splice(j,1);
        }
 
       });
