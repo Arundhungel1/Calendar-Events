@@ -16,6 +16,8 @@ function getAvailableDayTime(already_booked, available) {
   canBook.forEach((x,j) => {
     already_booked.forEach((y,i) => {
       if ((new Date(x.start).getTime() <= new Date(y.end).getTime() && new Date(x.start).getTime() >= new Date(y.start).getTime())
+      || (new Date(x.end).getTime() <= new Date(y.end).getTime() && new Date(x.end).getTime() >= new Date(x.start).getTime())
+      || x.getDay() === y.getDay()
       )
       })
     })
